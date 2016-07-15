@@ -10,6 +10,6 @@
 
 @interface YGProportionView : UIView
 
-- (void)setProgress:(CGFloat)progress;
+- (void)setProgress:(CGFloat)progress redProgress:(CGFloat)redprogress;
 
 @end

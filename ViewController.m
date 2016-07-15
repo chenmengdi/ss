@@ -14,6 +14,7 @@
     YGProportionView *_proportionView;
     
     CGFloat _progress;
+    CGFloat _redprogress;
     NSTimer *_timer;
 }
 @end
@@ -22,7 +23,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _proportionView = [[YGProportionView alloc] initWithFrame:CGRectMake(50, 100, 100, 100)];
+    _proportionView = [[YGProportionView alloc] initWithFrame:CGRectMake(50, 100, 300, 300)];
     _proportionView.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:_proportionView];
     
@@ -37,7 +38,8 @@
         [_timer setFireDate:[NSDate distantFuture]];
     } else {
         _progress = _progress + 0.9/50;
-        [_proportionView setProgress:_progress];
+        _redprogress = _redprogress + 0.95/50;
+        [_proportionView setProgress:_progress redProgress:_redprogress];
     }
 }
 
